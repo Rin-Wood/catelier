@@ -135,7 +135,7 @@ static void generate_key(byte *context, uint *key, byte *nonce_seed_bytes, int c
 static void decrypt(byte *data, int dlen, uint *key, byte *nonce_seed_bytes) {
     int blocklen = 0x200;
     int count, count2, counter, dataIndex;
-    byte array[blocklen];
+    byte *array = (byte*)malloc(blocklen * sizeof(byte));
     int i, j;
 
     count = dlen / blocklen;
@@ -157,6 +157,8 @@ static void decrypt(byte *data, int dlen, uint *key, byte *nonce_seed_bytes) {
             data[dataIndex++] ^= array[i];
         }
     }
+
+    free(array);
 }
 
 static PyObject* py_decrypt(PyObject* self, PyObject* args) {
