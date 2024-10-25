@@ -1,19 +1,18 @@
 from setuptools import setup, Extension
-import os
 
-extension = Extension('ctea', ['ctea.c'])
+extension = Extension('catelier', ['catelier.c'])
 
 setup(
-    name="ctea",
+    name="catelier",
     version="1.0.0",
     author='wood',
     author_email='miraclerinwood@gmail.com',
-    url='https://github.com/Rin-Wood/ctea',
-    description="TEA Decryption",
+    url='https://github.com/Rin-Wood/catelier',
+    description="atelier Decryption",
     long_description=open('README.md', 'rb').read().decode('utf8'),
 	long_description_content_type='text/markdown',
     license="BSD",
-    keywords="ctea",
+    keywords="catelier",
     ext_modules=[extension],
     classifiers=[
         'Development Status :: 5 - Production/Stable',
