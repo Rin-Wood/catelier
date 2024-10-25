@@ -1,24 +1,24 @@
-# ctea
+# catelier
 
-`ctea` is a Python package for decrypting data, using a custom TEA decryption algorithm implemented in C.
+`catelier` is a Python package for decrypting data, using a custom atelier decryption algorithm implemented in C.
 
 ## Features
 
-- Provides efficient TEA decryption functionality, based on C implementation.
+- Provides efficient atelier decryption functionality, based on C implementation.
 - Supports Python 3.6+
 
 ## Installation
 
-Install the latest version of `ctea` from PyPI:
+Install the latest version of `catelier` from PyPI:
 
 ```bash
-pip install ctea
+pip install catelier
 ```
 
 ## Usage
-Here's how to use `ctea` for decryption:
-
 ```python
-import ctea
-
-dec = ctea.decrypt(data)
+import catelier
+data = b'...'
+keyBytes = b'...'
+nonceSeed = b'...'
+dec = catelier.decrypt(data, keyBytes, nonceSeed)
